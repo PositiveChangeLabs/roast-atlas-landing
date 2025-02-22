@@ -1,95 +1,132 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+'use client';
+import Image from 'next/image';
+import styles from './page.module.css';
 
 export default function Home() {
+  const handleLikeClick = async () => {
+    try {
+      const response = await fetch('/api/like', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ liked: true }),
+      });
+
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+
+      const data = await response.json();
+      console.log('Subscription successful:', data);
+    } catch (error) {
+      console.error(
+        'There was a problem with the subscription request:',
+        error
+      );
+    }
+  };
+
+  const handleSubscribeClick = async () => {
+    const emailInput = document.getElementById(
+      'email-input'
+    ) as HTMLInputElement;
+    const email = emailInput.value;
+
+    try {
+      const response = await fetch('/api/subscribe', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email }),
+      });
+
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+
+      const data = await response.json();
+      console.log('Subscription successful:', data);
+      emailInput.value = '';
+    } catch (error) {
+      console.error(
+        'There was a problem with the subscription request:',
+        error
+      );
+    }
+  };
+
   return (
     <div className={styles.page}>
       <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol>
-          <li>
-            Get started by editing <code>src/app/page.tsx</code>.
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+        <span className={styles.headerText}>Roast Atlas</span>
 
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+        <h4>Are you passionate about great coffee?</h4>
+        <span className={styles.text}>
+          Something big is brewing! A platform designed to make discovering and
+          enjoying specialty coffee easier than ever. Whether you&apos;re a
+          coffee enthusiast or a business in the industry, we&apos;re creating a
+          seamless way to connect, explore, and experience the best coffee
+          offerings.
+        </span>
+        <span className={styles.text}>
+          We guarantee a groundbreaking way for coffee enthusiasts and
+          businesses to connect like never before. Stay ahead of the curve and
+          be the first to know when we launch.
+        </span>
+        <span className={styles.text}>
+          Be the first to join a coffee revolution!
+        </span>
+        <span className={styles.text}> Love the idea? Sign up now!</span>
+
+        <div className={styles.likeContainer}>
+          <div className={styles.likeArrowContainer}>
             <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
+              style={{ position: 'relative', left: '13px', top: '-3px' }}
+              src="/arrow.png"
+              alt="arrow"
+              width={50}
               height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.secondary}
-          >
-            Read our docs
-          </a>
+            ></Image>
+            <span
+              style={{
+                width: '60px',
+                fontSize: '12px',
+                transform: 'rotate(-20deg)',
+                position: 'relative',
+                left: '-15px',
+              }}
+            >
+              Hit if you like the idea
+            </span>
+          </div>
+          <button
+            onClick={() => handleLikeClick()}
+            id="like"
+            className={styles.like}
+          ></button>
         </div>
+
+        <form
+          className={styles.ctas}
+          onSubmit={(e) => {
+            e.preventDefault();
+            handleSubscribeClick();
+          }}
+        >
+          <input
+            type="email"
+            className={styles.email}
+            placeholder="E-mail"
+            id="email-input"
+            required
+          />
+          <button type="submit" className={styles.primary}>
+            Sign Up
+          </button>
+        </form>
       </main>
-      <footer className={styles.footer}>
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
     </div>
   );
 }
