@@ -4,7 +4,7 @@ import { google } from 'googleapis';
 export async function subscribeEmailGoogleSheer(data: any) {
   const auth = new google.auth.GoogleAuth({
     keyFile:
-      '/Users/yashchapaneri/Documents/projects/roast-atlas-landing/roast-atlas-d3de5f078b20.json',
+      './roast-atlas-d3de5f078b20.json',
     scopes: ['https://www.googleapis.com/auth/spreadsheets'],
   });
 
@@ -27,7 +27,7 @@ export async function subscribeEmailGoogleSheer(data: any) {
 export async function likeGoogleSheet() {
   const auth = new google.auth.GoogleAuth({
     keyFile:
-      '/Users/yashchapaneri/Documents/projects/roast-atlas-landing/roast-atlas-d3de5f078b20.json',
+      './roast-atlas-d3de5f078b20.json',
     scopes: ['https://www.googleapis.com/auth/spreadsheets'],
   });
 
