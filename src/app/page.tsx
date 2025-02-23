@@ -117,7 +117,7 @@ export default function Home() {
         >
           <input
             type="email"
-            className={styles.email}
+            className={`${styles.email} ${styles.inputField}`}
             placeholder="E-mail"
             id="email-input"
             required
