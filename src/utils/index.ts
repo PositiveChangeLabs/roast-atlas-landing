@@ -3,8 +3,7 @@ import { google } from 'googleapis';
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export async function subscribeEmailGoogleSheer(data: any) {
   const auth = new google.auth.GoogleAuth({
-    keyFile:
-      './roast-atlas-d3de5f078b20.json',
+    credentials: JSON.parse(process.env.GOOGLE_SERVICE_ACCOUNT_JSON as string),
     scopes: ['https://www.googleapis.com/auth/spreadsheets'],
   });
 
@@ -26,8 +25,7 @@ export async function subscribeEmailGoogleSheer(data: any) {
 
 export async function likeGoogleSheet() {
   const auth = new google.auth.GoogleAuth({
-    keyFile:
-      './roast-atlas-d3de5f078b20.json',
+    credentials: JSON.parse(process.env.GOOGLE_SERVICE_ACCOUNT_JSON as string),
     scopes: ['https://www.googleapis.com/auth/spreadsheets'],
   });
 
