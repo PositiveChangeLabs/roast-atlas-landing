@@ -181,7 +181,7 @@ button.secondary {
   flex-shrink: 0;
 }
 
-.inputField:focus {
+.inputFields:focus {
   background: var(--button-secondary-hover);
   border-color: transparent;
 }
