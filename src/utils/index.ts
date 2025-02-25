@@ -12,7 +12,7 @@ export async function subscribeEmailGoogleSheer(data: any) {
     console.log("Decoded JSON:", serviceAccountJson);
     const credentials = JSON.parse(serviceAccountJson);
     const auth = new google.auth.GoogleAuth({
-      credentials,
+      credentials: credentials,
       scopes: ['https://www.googleapis.com/auth/spreadsheets'],
     });
 
@@ -43,7 +43,7 @@ export async function likeGoogleSheet() {
   ).toString('utf-8');
   const credentials = JSON.parse(serviceAccountJson);
   const auth = new google.auth.GoogleAuth({
-    credentials,
+    credentials: credentials,
     scopes: ['https://www.googleapis.com/auth/spreadsheets'],
   });
 
