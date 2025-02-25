@@ -2,8 +2,13 @@ import { google } from 'googleapis';
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export async function subscribeEmailGoogleSheer(data: any) {
+  const serviceAccountJson = Buffer.from(
+      process.env.GOOGLE_SERVICE_ACCOUNT_JSON as string,
+      'base64'
+  ).toString('utf-8');
+  const credentials = JSON.parse(serviceAccountJson);
   const auth = new google.auth.GoogleAuth({
-    credentials: JSON.parse(process.env.GOOGLE_SERVICE_ACCOUNT_JSON as string),
+    credentials,
     scopes: ['https://www.googleapis.com/auth/spreadsheets'],
   });
 
@@ -24,8 +29,13 @@ export async function subscribeEmailGoogleSheer(data: any) {
 }
 
 export async function likeGoogleSheet() {
+  const serviceAccountJson = Buffer.from(
+      process.env.GOOGLE_SERVICE_ACCOUNT_JSON as string,
+      'base64'
+  ).toString('utf-8');
+  const credentials = JSON.parse(serviceAccountJson);
   const auth = new google.auth.GoogleAuth({
-    credentials: JSON.parse(process.env.GOOGLE_SERVICE_ACCOUNT_JSON as string),
+    credentials,
     scopes: ['https://www.googleapis.com/auth/spreadsheets'],
   });
 
