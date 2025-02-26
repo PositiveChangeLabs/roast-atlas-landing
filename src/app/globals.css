@@ -7,8 +7,10 @@
 html,
 body {
   max-width: 100vw;
-  overflow: hidden;
-  position: fixed;
+  overflow-x: hidden;
+  overflow-y: auto; /* Allow scrolling */
+  min-height: 100dvh;
+  position: relative; /* Remove fixed positioning */
 }
 
 body {
