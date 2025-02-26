@@ -19,17 +19,6 @@
   font-family: var(--font-roboto-condensed);
 }
 
-@media (prefers-color-scheme: dark) {
-  .page {
-    --gray-rgb: 255, 255, 255;
-    --gray-alpha-200: rgba(var(--gray-rgb), 0.145);
-    --gray-alpha-100: rgba(var(--gray-rgb), 0.06);
-
-    --button-primary-hover: #ccc;
-    --button-secondary-hover: #1a1a1a;
-  }
-}
-
 .main {
   display: flex;
   flex-direction: column;
@@ -39,7 +28,7 @@
   background-color: #f2f2f2be;
   border-radius: 10px;
   align-items: center;
-  width: 35%;
+  width: min(90%, 530px);
 }
 
 .main ol {
@@ -252,10 +241,16 @@ button.secondary {
     align-items: center;
     justify-content: center;
   }
-}
+  .main {
+    width: 90%; /* Increase width for small screens */
+    padding: 20px;
+  }
 
-@media (prefers-color-scheme: dark) {
-  .logo {
-    filter: invert();
+  .headerText {
+    font-size: 32px; /* Reduce heading size slightly */
+  }
+
+  .text {
+    font-size: 16px; /* Improve readability */
   }
 }
