@@ -126,6 +126,19 @@ export default function Home() {
             Sign Up
           </button>
         </form>
+        <p>
+          <center>
+            ☕ Love discovering new specialty coffee?
+            Tell us what you enjoy, and we’ll help make coffee exploration even better!
+          </center>
+        </p>
+        <p>
+          🚀 It only takes <strong>4 minutes</strong>.
+          <a href="https://form.typeform.com/to/d8NKOojG" target="_blank" rel="noopener noreferrer">
+            👉 Click here to share your thoughts!
+          </a>
+        </p>
+
       </main>
     </div>
   );
