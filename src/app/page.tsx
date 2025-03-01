@@ -5,7 +5,6 @@ import { useRef, useState } from "react";
 
 export default function Home() {
   const dialogRef = useRef<HTMLDialogElement | null>(null);
-  const [dialogVisible, setDialogVisible] = useState(false);
   const handleLikeClick = async () => {
     try {
       const response = await fetch('/api/like', {
@@ -20,7 +19,6 @@ export default function Home() {
         throw new Error('Network response was not ok');
       }
 
-      const data = await response.json();
     } catch (error) {
       console.error(
         'There was a problem with the subscription request:',
@@ -47,9 +45,7 @@ export default function Home() {
       if (!response.ok) {
         throw new Error('Network response was not ok');
       }
-
-      const data = await response.json();
-      console.log('Subscription successful:', data);
+      
       emailInput.value = '';
       setTimeout(() => {
         if (dialogRef.current) {
