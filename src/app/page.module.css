@@ -254,3 +254,23 @@ button.secondary {
     font-size: 16px; /* Improve readability */
   }
 }
+
+.dialog-box {
+  width: 350px;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  border: none;
+  background-color: white;
+  text-align: center;
+
+  /* ✅ Proper centering */
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.dialog-box::backdrop {
+  background: rgba(0, 0, 0, 0.4);
+}

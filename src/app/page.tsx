@@ -1,8 +1,11 @@
 'use client';
 import Image from 'next/image';
 import styles from './page.module.css';
+import { useRef, useState } from "react";
 
 export default function Home() {
+  const dialogRef = useRef<HTMLDialogElement | null>(null);
+  const [dialogVisible, setDialogVisible] = useState(false);
   const handleLikeClick = async () => {
     try {
       const response = await fetch('/api/like', {
@@ -18,7 +21,6 @@ export default function Home() {
       }
 
       const data = await response.json();
-      console.log('Subscription successful:', data);
     } catch (error) {
       console.error(
         'There was a problem with the subscription request:',
@@ -49,6 +51,12 @@ export default function Home() {
       const data = await response.json();
       console.log('Subscription successful:', data);
       emailInput.value = '';
+      setTimeout(() => {
+        if (dialogRef.current) {
+          console.log('Opening dialog...');
+          dialogRef.current.showModal();
+        }
+      }, 100);
     } catch (error) {
       console.error(
         'There was a problem with the subscription request:',
@@ -138,7 +146,15 @@ export default function Home() {
             👉 Click here to share your thoughts!
           </a>
         </p>
-
+        <dialog ref={dialogRef}>
+          <p className="text-lg font-semibold">🎉 You have successfully subscribed!</p>
+          <button
+              onClick={() => dialogRef.current?.close()}
+              className="mt-4 bg-gray-500 text-white px-4 py-2 rounded hover:bg-gray-600 transition"
+          >
+            Close
+          </button>
+        </dialog>
       </main>
     </div>
   );

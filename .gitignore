@@ -13,6 +13,9 @@
 # testing
 /coverage
 
+# IDE-related files
+.idea
+
 # next.js
 /.next/
 /out/
