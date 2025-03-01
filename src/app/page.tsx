@@ -1,7 +1,7 @@
 'use client';
 import Image from 'next/image';
 import styles from './page.module.css';
-import { useRef, useState } from "react";
+import { useRef } from "react";
 
 export default function Home() {
   const dialogRef = useRef<HTMLDialogElement | null>(null);
@@ -45,7 +45,7 @@ export default function Home() {
       if (!response.ok) {
         throw new Error('Network response was not ok');
       }
-      
+
       emailInput.value = '';
       setTimeout(() => {
         if (dialogRef.current) {
