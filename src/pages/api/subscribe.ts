@@ -38,21 +38,25 @@ export default async function handler(
     <h3>🔥 What’s Brewing?</h3>  
     <p><strong>We’re creating the ultimate specialty coffee marketplace and discovery platform where you can:</strong></p>
     <ul>
-      <li>✅ Explore specialty coffee cafes and top roasters near you</li>
-      <li>✅ Search by country, city, or even find hidden gems on a map</li>
-      <li>✅ Read and leave reviews on cafes and coffee varieties</li>
-      <li>✅ Connect with cafes offering job opportunities in the coffee industry</li>
-      <li>✅ Stay updated on coffee events, workshops, and tasting sessions</li>
-      <li>✅ Enjoy curated blogs and expert coffee insights</li>
-      <li>✅ Subscribe to freshly roasted coffee, delivered straight to your door</li>
-    </ul>  
+      <li> Explore specialty coffee cafes and top roasters near you</li>
+      <li> Subscribe to freshly roasted coffee, delivered straight to your door</li>
+      <li> Search by country, city, or even find hidden gems on a map</li>
+      <li> Read and leave reviews on cafes and coffee varieties</li>
+      <li> Connect with cafes offering job opportunities in the coffee industry</li>
+      <li> Stay updated on coffee events, workshops, and tasting sessions</li>
+      <li> Enjoy curated blogs and expert coffee insights</li>
+      <li> Discover exclusive deals and discounts on specialty coffee</li>
+      <li> Join a community of coffee lovers and share your favorite brews</li>
+      <li> Learn from experts through coffee brewing guides and masterclasses</li>
+      <li> Buy and sell premium coffee gear through our marketplace (coming soon!)</li>
+    </ul> 
 
     <h3>🚀 What’s Next?</h3>  
     <p>We’re hard at work perfecting the experience, and as an early subscriber, you’ll get:</p>
     <ul>
-      <li>✨ Exclusive sneak peeks before we launch</li>
-      <li>✨ Early access to limited features and beta testing opportunities</li>
-      <li>✨ Special coffee deals and offers from our partners</li>
+      <li> Exclusive sneak peeks before we launch</li>
+      <li> Early access to limited features and beta testing opportunities</li>
+      <li> Special coffee deals and offers from our partners</li>
     </ul>  
 
     <h3>☕ Want to Make Your Coffee Experience Even Better?</h3>  
