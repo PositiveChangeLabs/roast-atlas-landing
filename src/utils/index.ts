@@ -56,25 +56,3 @@ export async function likeGoogleSheet() {
   }
 }
 
-export const sendEmail = async (email: string, subject: string, message: string) => {
-  try {
-    const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/send-email`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ email, subject, message }),
-    });
-
-    const data = await response.json();
-
-    if (response.ok) {
-      return { success: true, message: 'Email sent successfully!' };
-    } else {
-      return { success: false, message: data.error || 'Failed to send email' };
-    }
-  } catch (error) {
-    console.error('Error sending email:', error);
-    return { success: false, message: 'Something went wrong' };
-  }
-};
-
-

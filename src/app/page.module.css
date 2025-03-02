@@ -255,22 +255,59 @@ button.secondary {
   }
 }
 
-.dialog-box {
-  width: 350px;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+.modalDialog {
+  width: 380px;
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
   border: none;
-  background-color: white;
+  background: rgba(255, 255, 255, 0.25); /* Glassmorphism effect */
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   text-align: center;
+  color: #333;
+  font-family: 'Inter', sans-serif;
+  transform: scale(0.9);
+  opacity: 0;
+  transition: all 0.3s ease-in-out;
 
-  /* ✅ Proper centering */
+  /* ✅ Proper Centering */
   position: fixed;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%) scale(0.9);
 }
 
-.dialog-box::backdrop {
-  background: rgba(0, 0, 0, 0.4);
+/* ✅ When the dialog is open, make it pop in smoothly */
+.modalDialog[open] {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 1;
+}
+
+/* ✅ Add a nice backdrop blur */
+.modalDialog::backdrop {
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+/* ✅ Style the close button */
+.modalDialog button {
+  margin-top: 16px;
+  background: #000;
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 8px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.2s ease-in-out;
+}
+
+.modalDialog button:hover {
+  background: #333;
 }
