@@ -159,7 +159,7 @@ export default function Home() {
         </p>
         <dialog ref={dialogRef} className={styles.modalDialog}>
           <p className="text-lg font-semibold">
-            Thanks for signing up! If you entered a valid email, you&apos;ll hear from us soon. ☕
+            Thank you for signing up! You&apos;ll hear from us soon via the provided email. ☕
           </p>
           <button
               onClick={() => dialogRef.current?.close()}

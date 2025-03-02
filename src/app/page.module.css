@@ -285,7 +285,7 @@ button.secondary {
   align-items: center;
   justify-content: center;
   transform: translate(-50%, -50%) scale(1);
-  opacity: 1;
+  opacity: 4;
 }
 
 /* ✅ Add a nice backdrop blur */
