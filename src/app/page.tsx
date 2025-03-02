@@ -1,8 +1,12 @@
 'use client';
 import Image from 'next/image';
 import styles from './page.module.css';
+import { useRef } from "react";
+import { useState } from "react";
 
 export default function Home() {
+  const dialogRef = useRef<HTMLDialogElement | null>(null);
+  const [loading, setLoading] = useState(false);
   const handleLikeClick = async () => {
     try {
       const response = await fetch('/api/like', {
@@ -17,8 +21,6 @@ export default function Home() {
         throw new Error('Network response was not ok');
       }
 
-      const data = await response.json();
-      console.log('Subscription successful:', data);
     } catch (error) {
       console.error(
         'There was a problem with the subscription request:',
@@ -33,6 +35,7 @@ export default function Home() {
     ) as HTMLInputElement;
     const email = emailInput.value;
 
+    setLoading(true);
     try {
       const response = await fetch('/api/subscribe', {
         method: 'POST',
@@ -46,19 +49,35 @@ export default function Home() {
         throw new Error('Network response was not ok');
       }
 
-      const data = await response.json();
-      console.log('Subscription successful:', data);
       emailInput.value = '';
+      setTimeout(() => {
+        setLoading(false);
+        if (dialogRef.current) {
+          console.log('Opening dialog...');
+          dialogRef.current.showModal();
+        }
+      }, 500);
     } catch (error) {
       console.error(
         'There was a problem with the subscription request:',
         error
       );
+      setLoading(false);
     }
   };
 
   return (
     <div className={styles.page}>
+      {loading && (
+          <div className="loader-overlay">
+            <div className="coffee-loader">
+              <div className="coffee-cup"></div>
+              <div className="steam steam1"></div>
+              <div className="steam steam2"></div>
+              <div className="steam steam3"></div>
+            </div>
+          </div>
+      )}
       <main className={styles.main}>
         <span className={styles.headerText}>Roast Atlas</span>
 
@@ -138,6 +157,17 @@ export default function Home() {
             👉 Click here to share your thoughts!
           </a>
         </p>
+        <dialog ref={dialogRef} className={styles.modalDialog}>
+          <p className="text-lg font-semibold">
+            Thanks for signing up! If you entered a valid email, you&apos;ll hear from us soon. ☕
+          </p>
+          <button
+              onClick={() => dialogRef.current?.close()}
+              className="mt-4 bg-gray-500 text-white px-4 py-2 rounded hover:bg-gray-600 transition"
+          >
+            Close
+          </button>
+        </dialog>
 
       </main>
     </div>

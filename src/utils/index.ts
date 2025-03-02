@@ -1,7 +1,7 @@
 import { google } from 'googleapis';
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-export async function subscribeEmailGoogleSheer(data: any) {
+export async function subscribeEmailGoogleSheet(data: any) {
   const env_creds = process.env.GOOGLE_API_CREDS;
   if (env_creds) {
     const credentials = Buffer.from(env_creds, 'base64').toString('utf-8');
@@ -55,3 +55,4 @@ export async function likeGoogleSheet() {
     console.log('Credentials not found');
   }
 }
+
