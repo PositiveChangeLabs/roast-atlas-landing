@@ -285,7 +285,11 @@ button.secondary {
   align-items: center;
   justify-content: center;
   transform: translate(-50%, -50%) scale(1);
-  opacity: 4;
+  opacity: 1;
+  background: white;
+  color: black;
+  padding: 20px;
+  border-radius: 10px;
 }
 
 /* ✅ Add a nice backdrop blur */
