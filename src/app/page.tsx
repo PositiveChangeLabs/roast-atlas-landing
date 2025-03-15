@@ -152,7 +152,7 @@ export default function Home() {
           </center>
         </p>
         <p>
-          🚀 It only takes <strong>4 minutes</strong>.
+          🚀 It only takes <strong>2 minutes</strong>.
           <a href="https://form.typeform.com/to/d8NKOojG" target="_blank" rel="noopener noreferrer">
             👉 Click here to share your thoughts!
           </a>
