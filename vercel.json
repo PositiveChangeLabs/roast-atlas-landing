@@ -1,9 +1,9 @@
 {
   "redirects": [
     {
-      "source": "/(.*)",
+      "source": "/:path*",
       "has": [{ "type": "host", "value": "roast-atlas.com" }],
-      "destination": "https://www.roast-atlas.com/$1",
+      "destination": "https://www.roast-atlas.com/:path*",
       "permanent": true
     }
   ]
