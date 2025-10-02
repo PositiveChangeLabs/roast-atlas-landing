@@ -55,7 +55,6 @@ export default function Page() {
                     </div>
                 </div>
             </div>
-s
 
 
             {/* Footer space for visual separation */}
