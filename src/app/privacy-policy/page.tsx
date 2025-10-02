@@ -14,13 +14,13 @@ const policySections = [
                     <strong>Account Data:</strong> Your name, email address, password (hashed), and optional profile picture. We use this to secure your account and personalize your experience.
                 </li>
                 <li>
-                    <strong>Location Data:</strong> We request access to your device's precise location (GPS) to show you nearby specialty coffee shops and to personalize your discovery feed. You can disable this at any time in your device settings.
+                    <strong>Location Data:</strong> We request access to your device&apos; precise location (GPS) to show you nearby specialty coffee shops and to personalize your discovery feed. You can disable this at any time in your device settings.
                 </li>
                 <li>
                     <strong>User Content:</strong> This includes ratings, written reviews, photos of coffee shops, and any other data you voluntarily submit to the platform. This content is public and visible to all other users.
                 </li>
                 <li>
-                    <strong>Usage Data:</strong> Information on how you access and use the app, such as pages viewed, time spent, search queries, and crash reports. We use this to optimize performance and improve the app's features.
+                    <strong>Usage Data:</strong> Information on how you access and use the app, such as pages viewed, time spent, search queries, and crash reports. We use this to optimize performance and improve the app&apos; features.
                 </li>
             </ul>
         ),
@@ -55,10 +55,10 @@ const policySections = [
                     <strong>Service Providers:</strong> We share necessary data with third-party vendors who perform services for us (e.g., hosting, analytics, database management). These vendors are required to protect your information.
                 </li>
                 <li>
-                    <strong>Business Transfers:</strong> If "Roast Atlas" is involved in a merger, acquisition, or asset sale, your data may be transferred as a business asset.
+                    <strong>Business Transfers:</strong> If &quot;Roast Atlas&quot; is involved in a merger, acquisition, or asset sale, your data may be transferred as a business asset.
                 </li>
                 <li>
-                    <strong>Legal Requirements:</strong> If required by law or subpoena to protect the rights, property, or safety of "Roast Atlas," our users, or the public.
+                    <strong>Legal Requirements:</strong> If required by law or subpoena to protect the rights, property, or safety of &quot;Roast Atlas&quot; our users, or the public.
                 </li>
             </ul>
         ),
@@ -127,7 +127,7 @@ export default function PrivacyPolicy() {
                     </p>
 
                     <p className={styles.introText}>
-                        Welcome to <strong>Roast Atlas</strong>! We value your privacy and are committed to protecting your personal information. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our mobile application and services (collectively, the "Service").
+                        Welcome to <strong>Roast Atlas</strong>! We value your privacy and are committed to protecting your personal information. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our mobile application and services (collectively, the &quot;Service&quot;).
                     </p>
 
                     {policySections.map((section, index) => (
