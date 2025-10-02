@@ -3,6 +3,7 @@ import Image from 'next/image';
 import styles from './page.module.css';
 import { useRef } from "react";
 import { useState } from "react";
+import Link from "next/link";
 
 export default function Home() {
   const dialogRef = useRef<HTMLDialogElement | null>(null);
@@ -157,6 +158,14 @@ export default function Home() {
             👉 Click here to share your thoughts!
           </a>
         </p>
+        <div style={{ textAlign: "center", marginTop: "20px" }}>
+          <a href="/privacy-policy" style={{ textDecoration: "underline", marginRight: "10px" }}>
+            Privacy
+          </a>
+          <a href="/contact" style={{ textDecoration: "underline" }}>
+            Contact
+          </a>
+        </div>
         <dialog ref={dialogRef} className={styles.modalDialog}>
           <p className="text-lg font-semibold">
             Thank you for signing up! You&apos;ll hear from us soon via the provided email. ☕

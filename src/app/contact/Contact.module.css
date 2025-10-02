@@ -1,0 +1,103 @@
+/* PrivacyPolicy.module.css - Styles for the PrivacyPolicy component.
+  Uses CSS Modules for local scoping of class names.
+*/
+
+/* --- General Layout & Body --- */
+.container {
+    min-height: 100vh;
+    background-color: #f9fafb; /* Light gray background */
+}
+
+/* --- Banner Styling --- */
+.banner {
+    position: relative;
+    height: 16rem; /* h-64 equivalent */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: #3e2723; /* Deep coffee brown fallback */
+    background-size: cover;
+    background-position: center;
+}
+
+.bannerOverlay {
+    position: absolute;
+    inset: 0;
+    background-color: #000;
+    opacity: 0.4;
+}
+
+.bannerContent {
+    position: relative;
+    z-index: 10;
+    padding: 1rem;
+}
+
+.bannerTitle {
+    font-size: 3rem; /* 4xl/5xl equivalent */
+    font-weight: 800;
+    color: #fff;
+    letter-spacing: -0.025em;
+    line-height: 1.1;
+}
+
+.bannerSubtitle {
+    /* FURTHER FIX: Increased margin to 3rem to definitively separate the large title and subtitle */
+    margin-top: 3rem;
+    font-size: 1.125rem; /* lg equivalent */
+    color: #e5e7eb; /* Light gray text */
+    line-height: 1.4;
+}
+
+/* --- Policy Content Area --- */
+.contentArea {
+    max-width: 56rem; /* max-w-4xl equivalent */
+    margin-left: auto;
+    margin-right: auto;
+    padding: 3rem 1rem; /* py-12 px-4 equivalent */
+}
+
+.policyCard {
+    background-color: #fff;
+    padding: 2.5rem; /* p-10 equivalent */
+    border-radius: 0.75rem; /* rounded-xl equivalent */
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* shadow-lg equivalent */
+}
+
+/* --- Section Formatting --- */
+.lastUpdated {
+    font-size: 0.875rem;
+    color: #6b7280;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.introText {
+    color: #374151;
+    margin-bottom: 2rem;
+    line-height: 1.625;
+}
+
+.policySection {
+    margin-bottom: 2rem;
+}
+
+.sectionTitle {
+    font-size: 1.5rem; /* 2xl equivalent */
+    font-weight: 700;
+    color: #111827;
+    margin-bottom: 0.75rem;
+    border-left: 4px solid #8d6e63; /* Accent color: Muted coffee/mocha brown */
+    padding-left: 0.75rem;
+}
+
+.sectionContent {
+    color: #4b5563;
+    line-height: 1.625;
+}
+
+.sectionContent p {
+    margin-bottom: 1rem;
+}
