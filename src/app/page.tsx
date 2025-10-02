@@ -3,7 +3,6 @@ import Image from 'next/image';
 import styles from './page.module.css';
 import { useRef } from "react";
 import { useState } from "react";
-import Link from "next/link";
 
 export default function Home() {
   const dialogRef = useRef<HTMLDialogElement | null>(null);
