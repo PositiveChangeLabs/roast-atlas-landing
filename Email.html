@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Single Page Image with Centered Content</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f5f5f5;
+        }
+
+        .background-image {
+            position: relative;
+            width: 100%;
+            height: 100vh; /* make the image fit one page height */
+            overflow: hidden;
+        }
+
+        .background-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .content-box {
+            position: absolute;
+            top: 4cm;
+            left: 4cm;
+            right: 4cm;
+            bottom: 4cm;
+            background-color: rgba(255, 255, 255, 0.95);
+            padding: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            border-radius: 8px;
+            overflow-y: auto;
+        }
+
+        .content-box p {
+            text-align: left;
+            font-size: 16px;
+            line-height: 1.6;
+            color: #333;
+            margin: 0 0 10px 0;
+        }
+
+        .content-box ul {
+            text-align: left;
+            padding-left: 20px;
+            list-style: none;
+            margin: 0 0 10px 0;
+        }
+
+        .content-box ul li::before {
+            content: "✅ ";
+            margin-right: 5px;
+        }
+
+        /* Optional: make sure text scrolls if container overflows */
+        .content-box::-webkit-scrollbar {
+            width: 5px;
+        }
+
+        .content-box::-webkit-scrollbar-thumb {
+            background: #aaa;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="background-image">
+    <img src="https://images.pexels.com/photos/333523/pexels-photo-333523.jpeg?cs=srgb&dl=pexels-chevanon-333523.jpg&fm=jpg&w=3264&h=4928&_gl=1*17965vt*_ga*MzQxMDk5OTYxLjE3NDIzMTE4MDk.*_ga_8JE65Q40S6*MTc0MjMxMTgwOC4xLjEuMTc0MjMxMTgzNy4wLjAuMA.." alt="Coffee Image">
+
+    <div class="content-box">
+        <p>Hey there,</p>
+        <p>I'm Jalaj Arora, working on a platform that connects specialty coffee roasters and cafés with coffee lovers while creating more exposure and opportunities for businesses like yours.</p>
+        <p>We know how much heart and effort goes into running a coffee business and we truly admire the work you do. As we dig into market research we'd love to hear your insights on the specialty coffee industry on what’s working, what’s challenging, and what you’d love to see change.</p>
+        <p>Our goal is to create a space where:</p>
+        <ul>
+            <li>Roasters can connect directly with coffee lovers and gain more visibility</li>
+            <li>Cafés can reach new customers, showcase their offerings, and even hire baristas more easily</li>
+            <li>Coffee enthusiasts can discover and order from amazing roasters like you</li>
+            <li>The industry can share knowledge, reviews, and experiences in one central place.</li>
+        </ul>
+        <p>Would you be open for having a short chat? It won’t take more than a few minutes. Your expertise and insights would be invaluable and would definitely help us shape something for our community.</p>
+        <p>We'd love to hear back from you.</p>
+    </div>
+</div>
+
+</body>
+
+</html>
