@@ -88,9 +88,12 @@ const policySections = [
         title: "6. Contact Us",
         content: (
             <ul className="list-disc list-inside space-y-2">
-                <li>
-                    <strong>Email:</strong> team.roast.atlas@gmail.com
-                </li>
+                    <a
+                        href="mailto:team.roast.atlas@gmail.com"
+                        style={{ color: '#3e2723', textDecoration: 'underline' }}
+                    >
+                        team@roast-atlas.com
+                    </a>
             </ul>
         ),
     },
